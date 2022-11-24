@@ -1,9 +1,9 @@
 import Trasection from "./components/Transaction";
-
+import './App.css'
 function App() {
   return (
-    <div>
-      <h1>แอพบันทึกรายการ</h1>
+    <div className="container">
+      <h1>แอพบัญชีรายรับ - รายจ่าย</h1>
 
       <Trasection />
     </div>

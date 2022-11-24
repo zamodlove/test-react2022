@@ -1,12 +1,26 @@
-const Item = () => {
-  const name = "ซื้อของที่ห้าง";
-  const amount = 7000;
+import PropTypes from 'prop-types'
 
+
+const  Item = (props)=> {
+  const {title,amount} = props
   return (
     <li>
-      {name} <span> -{amount}</span>
+      {title} <span> -{amount}</span>
     </li>
   );
-};
+}
 
-export default Item;
+Item.propTypes={
+    title:PropTypes.string.isRequired,
+    amount:PropTypes.number.isRequired
+
+}
+
+
+
+
+
+
+
+export default Item
+ 
