@@ -27,7 +27,7 @@ const onAddNewItem =(newItem) => {
     <div className="container">
       <h1 className="h-app">แอพบัญชีรายรับ - รายจ่าย</h1>
       <FormComponent onAddItem= {onAddNewItem}/>
-      <Trasection items={initdata} />
+      <Trasection items={items} />
     </div>
   );
 }
