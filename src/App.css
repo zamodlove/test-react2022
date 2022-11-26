@@ -16,10 +16,11 @@ body {
   margin: 0;
 }
 
- h1{
+ .h-app{
 color: red;
 align-items: center;
-font-size: 1.5;
+font-size: 1.5rem;
+text-align: center;
 
 }
 
