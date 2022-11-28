@@ -3,8 +3,11 @@ import "./FormComponent.css";
 import { v4 as uuidv4 } from "uuid";
 
 const FormComponent = (props) => {
+
+console.log("Render FormComponent");
+
   const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
 
   const inputTitle = (event) => {
     setTitle(event.target.value);
@@ -45,7 +48,7 @@ const FormComponent = (props) => {
 
 
         <div className="form-control">
-          <label>ชื่อรายการ</label>
+          <label>จำนวน</label>
           <input
             type="text"
             placeholder="(+ รายรับ ,- รายจ่าย)"
