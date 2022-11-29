@@ -27,7 +27,7 @@ console.log("Render FormComponent");
     props.onAddItem(itemData);
     setTitle("");
     setAmount(0);
-  };
+  };      
 useEffect(()=>{
   console.log("call useEffect")
 
