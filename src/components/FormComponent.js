@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./FormComponent.css";
 import { v4 as uuidv4 } from "uuid";
 
@@ -6,8 +6,8 @@ const FormComponent = (props) => {
 
 console.log("Render FormComponent");
 
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState();
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState('');
 
   const inputTitle = (event) => {
     setTitle(event.target.value);
@@ -28,8 +28,10 @@ console.log("Render FormComponent");
     setTitle("");
     setAmount(0);
   };
+useEffect(()=>{
+  console.log("call useEffect")
 
-
+},[amount])
 
 
 
