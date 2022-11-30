@@ -17,7 +17,7 @@ function App() {
   return (
     <DataContext.Provider value={
       {
-        incom :50000,
+        income :50000,
         expense : -8000
       }
     }>
