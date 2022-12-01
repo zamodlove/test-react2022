@@ -4,6 +4,7 @@ import "./Transaction.css";
 
 
 
+
 const Trasection = (props) => {
   const {items} = props
  
