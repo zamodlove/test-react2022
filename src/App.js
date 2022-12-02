@@ -4,30 +4,41 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import DataContext from "./components/data/DataContext";
 import ReportComponent from "./components/ReportComponent";
-import { element } from "prop-types";
-
-
+   
 function App() {
-  const [items, setItems] = useState([]);
+
+const initState = [
+{id:1,title:"ค่าเช่าบ้าน",amount:-2000},
+{id:2,title:"เงินเดือน",amount:12000},
+{id:3,title:"ค่าเดินทาง",amount:-500},
+{id:4,title:"ขายของ",amount:2000}
+]
+  const [items, setItems] = useState(initState);
+  const [reportIncome,setReportIncome] = useState(0)
+  const [reportExpense,setReportExpense] = useState(0)
+
   const onAddNewItem = (newItem) => {
+ 
     setItems((prevItem) => {
-      return [newItem, ...prevItem];
+      return [newItem, ...prevItem];         
     });
-  };
+  };  
   useEffect(() => {
    const amounts = items.map(items=>items.amount)
   const income = amounts.filter(element=>element>0).reduce((total,element)=>total+=element, 0)
-    
+  const expense = (amounts.filter(element=>element<0).reduce((total,element)=>total+=element, 0))*-1
+   
 
-  console.log("ยอดรายได้ =",income)
-  }, [items])
-  console.log(items)
+    setReportIncome(income)
+    setReportExpense(expense)
+  }, [items,reportIncome,reportExpense])
+
 
   return (
     <DataContext.Provider value={
       {
-        income :50000,
-        expense : -8000
+        income :reportIncome,
+        expense : reportExpense
       }
     }>
       <div className="container">
@@ -37,6 +48,9 @@ function App() {
       <Trasection items={items} />
     </div>
     </DataContext.Provider>
+
+
+
   );
 }
 

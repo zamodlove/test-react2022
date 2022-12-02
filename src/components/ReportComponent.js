@@ -5,9 +5,9 @@ const ReportComponent = () => {
   const { income, expense } = useContext(DataContext);
   return (
     <div>
-      <p>รายรับ  : {income}</p>
-      <p>รายจ่าย : {expense}</p>
-    </div>
+     <h3>ยอดคงเหลือ (บาท)</h3>
+     <h1>{income-expense}</h1>
+    </div>  
   );
 };
 
