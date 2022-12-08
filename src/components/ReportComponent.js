@@ -7,15 +7,15 @@ const ReportComponent = () => {
   return (
     <div>
      <h3>ยอดคงเหลือ (บาท)</h3>
-     <h1>{income-expense}</h1>
+     <h1>฿{income-expense}</h1>
       <div className="report-container">
         <div>
-          <h4>ยอดรายรับ</h4>
-          <p className="report-income">{income}</p>
+          <h4>รายได้ทั้งหมด</h4>
+          <p className="report-plus">฿{income}</p>
         </div>
         <div>
-        <h4>ยอดรายจ่าย</h4>
-        <p className="report-expense">{expense}</p>
+        <h4>รายจ่ายทั้งหมด</h4>
+        <p className="report-minus">฿{expense}</p>
         </div>
 
 

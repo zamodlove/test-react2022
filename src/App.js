@@ -33,22 +33,33 @@ const initState = [
     setReportExpense(expense)
   }, [items,reportIncome,reportExpense])
 
-
+// reducer state
+const[count,setCount] = useState(0)
   return (
-    <DataContext.Provider value={
-      {
-        income :reportIncome,
-        expense : reportExpense
-      }
-    }>
-      <div className="container">
-      <h1 className="h-app">แอพบัญชีรายรับ - รายจ่าย</h1>
-      <ReportComponent/>
-      <FormComponent onAddItem={onAddNewItem} />
-      <Trasection items={items} />
-    </div>
-    </DataContext.Provider>
+    // <DataContext.Provider value={
+    //   {
+    //     income :reportIncome,
+    //     expense : reportExpense
+    //   }
+    // }>
+    //   <div className="container">
+    //   <h1 className="h-app">แอพบัญชีรายรับ - รายจ่าย</h1>
+    //   <ReportComponent/>
+    //   <FormComponent onAddItem={onAddNewItem} />
+    //   <Trasection items={items} />
+    // </div>
+    // </DataContext.Provider>
 
+      <div align="center">
+          <h1>{count}</h1>
+          <button>เพิ่ม</button>
+          <button>ลด</button>
+          <button>ลบ</button>
+        
+      </div>
+
+
+      
 
 
   );
